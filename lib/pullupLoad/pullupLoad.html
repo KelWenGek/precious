@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pullupLoad</title>
+    <style>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+
+        }
+
+        #upload {
+            min-height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<div id="upload">
+
+</div>
+
+<script>
+
+    $(selector)
+            .dropload({
+                scrollArea: window,
+                loadDownFn: function (me) {
+                    $.ajax({
+                        type: 'POST',
+                        url: self.url,
+                        dataType: 'json',
+                        data: {
+                            pageIndex: self.pageIndex,
+                            pageSize: self.pageSize
+                        },
+                        success: function (result) {
+                            if (result.code == 1) {
+                                var data = JSON.parse(result.lst);
+                                self.count || (self.count = result.count);
+                                self.render.call(self, data);
+                                if (self.pageSize * self.pageIndex > self.count) {
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData();
+                                } else {
+                                    self.pageIndex++;
+                                }
+                            }
+                        },
+                        error: function (xhr, type) {
+                            console.log('请求出错,请刷新页面!')
+                        },
+                        complete: function () {
+
+                            me.resetload();
+                        }
+                    });
+                }
+            });
+
+
+</script>
+
+
+</body>
+</html>

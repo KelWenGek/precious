@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/tree.css">
+    <title>树形结构</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        .tree-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        .tree-header {
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            position: relative;
+            min-height: 38px;
+            line-height: 38px;
+            background: #5090c1;
+            color: #fff;
+            padding-left: 12px
+        }
+        #tree1 {
+            margin-left: 12px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="tree-wrap">
+
+    <div class="tree-header">
+        请选择树形列表项
+    </div>
+    <div id="tree1" class="tree">
+
+    </div>
+
+</div>
+<script src="js/jquery.min.js"></script>
+
+<script src="js/jquery.tree.min.js"></script>
+
+<script src="js/tree.sample.data.js"></script>
+
+<script>
+    jQuery(function ($) {
+
+        $('#tree1')
+                .tree({
+                    dataSource: treeDataSource,
+                    multiSelect: true,
+                    loadingHTML: '<div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>',
+                    'open-icon': 'icon-minus',
+                    'close-icon': 'icon-plus',
+                    'selectable': true,
+                    'selected-icon': 'icon-ok',
+                    'unselected-icon': 'icon-remove'
+                });
+
+
+
+    });
+</script>
+
+
+</body>
+</html>

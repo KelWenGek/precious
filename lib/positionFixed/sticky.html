@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sticky</title>
+</head>
+<body>
+<div style="height: 500px;background: blue"></div>
+
+<div id="sticky" style="height: 50px;background: green"></div>
+<div style="height: 2000px;"></div>
+
+
+<script src="sticky.js"></script>
+<script>
+
+    new window.lib.Sticky(document.getElementById('sticky')[0],0);
+</script>
+</body>
+</html>

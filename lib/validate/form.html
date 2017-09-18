@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form</title>
+
+	<style>
+		form {
+			width : 720px;
+		}
+
+		.form-item {
+			float          : left;
+			position       : relative;
+			margin-right   : 30px;
+			padding-bottom : 30px;
+			width          : 330px;
+		}
+
+		.form-item label, .form-item input {
+			display : block;
+		}
+
+		.validate-msg {
+			position    : absolute;
+			bottom      : 0;
+			left        : 0;
+			width       : 100%;
+			height      : 30px;
+			line-height : 15px;
+			font-size   : 12px;
+		}
+
+		input {
+			background            : #f8f8f8;
+			border                : 1px solid #444444;
+			border-radius         : 5px;
+			-webkit-border-radius : 5px;
+			-moz-border-radius    : 5px;
+			padding               : 10px 7px;
+			width                 : 314px;
+		}
+
+		input#tos_checkbox {
+			clear : both;
+		}
+
+		input:hover, textarea:hover {
+			box-shadow         : 0px 0px 6px #c0c0c0;
+			-moz-box-shadow    : 0px 0px 6px #c0c0c0;
+			-webkit-box-shadow : 0px 0px 6px #c0c0c0;
+		}
+
+		.button {
+			background-color      : #0885c7;
+			background-repeat     : repeat-x;
+			background-image      : -khtml-gradient(linear, left top, left bottom, from(#4cbbf5), to(#0885c7));
+			background-image      : -moz-linear-gradient(top, #4cbbf5, #0885c7);
+			background-image      : -ms-linear-gradient(top, #4cbbf5, #0885c7);
+			background-image      : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4cbbf5), color-stop(100%, #0885c7));
+			background-image      : -webkit-linear-gradient(top, #4cbbf5, #0885c7);
+			background-image      : -o-linear-gradient(top, #4cbbf5, #0885c7);
+			background-image      : linear-gradient(top, #4cbbf5, #0885c7);
+			border                : 1px solid #00527d;
+			border-radius         : 5px;
+			-webkit-border-radius : 5px;
+			-moz-border-radius    : 5px;
+			color                 : #ffffff;
+			cursor                : pointer;
+			display               : block;
+			float                 : left;
+			font-size             : 20px;
+			line-height           : normal;
+			padding               : 10px 15px;
+			text-align            : center;
+			text-decoration       : none;
+			text-shadow           : 0 -1px #444444;
+			transition            : 0.2s linear all;
+			-webkit-transition    : 0.2s linear all;
+			-moz-transition       : 0.2s linear all;
+			-ms-transition        : 0.2s linear all;
+			-o-transition         : 0.2s linear all;
+		}
+
+		.button.gray {
+			background-color  : #dcdcdc;
+			background-repeat : no-repeat;
+			background-image  : -khtml-gradient(linear, left top, left bottom, from(#f2f2f2), to(#dcdcdc));
+			background-image  : -moz-linear-gradient(top, #f2f2f2, #dcdcdc);
+			background-image  : -ms-linear-gradient(top, #f2f2f2, #dcdcdc);
+			background-image  : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dcdcdc), color-stop(100%, #dcdcdc));
+			background-image  : -webkit-linear-gradient(top, #f2f2f2, #dcdcdc);
+			background-image  : -o-linear-gradient(top, #f2f2f2, #dcdcdc);
+			background-image  : linear-gradient(top, #f2f2f2, #dcdcdc);
+			border            : 1px solid #444444;
+			color             : #444444;
+			font-size         : 14px;
+			font-weight       : bold;
+			text-shadow       : 0px -1px #ffffff;
+		}
+
+		.error_box {
+			background            : #fad3c4;
+			border                : 1px solid #a75b4e;
+			border-radius         : 5px;
+			-webkit-border-radius : 5px;
+			-moz-border-radius    : 5px;
+			color                 : #444444;
+			display               : none;
+			font-size             : 13px;
+			margin                : 0px 0px 15px 0px;
+			padding               : 8px 8px;
+			width                 : 672px;
+		}
+
+	</style>
+</head>
+<body>
+
+<form name="example_form" action="#" method="POST">
+
+	<div class="form-item">
+		<label for="req">Required field:</label>
+		<input name="req" id="req">
+		<span class="validate-msg J_valid_msg"></span>
+	</div>
+
+	<div class="form-item">
+		<label for="alphanumeric">Alphanumeric field:</label>
+		<input name="alphanumeric" id="alphanumeric">
+		<span class="validate-msg J_valid_msg"></span>
+
+	</div>
+
+	<div class="form-item">
+		<label for="password">Password:</label>
+		<input name="password" id="password" type="password">
+		<span class="validate-msg J_valid_msg"></span>
+
+	</div>
+
+	<div class="form-item">
+		<label for="password_confirm">Password Confirmation (match password):</label>
+		<input name="password_confirm" id="password_confirm" type="password">
+		<span class="validate-msg J_valid_msg"></span>
+
+	</div>
+
+	<div class="form-item">
+		<label for="email">Email:</label>
+		<input name="email" id="email">
+		<span class="validate-msg J_valid_msg"></span>
+
+	</div>
+
+	<div class="form-item">
+		<label for="minlength">Min length field (min. 8 chars):</label>
+		<input name="minlength" id="minlength">
+		<span class="validate-msg J_valid_msg"></span>
+
+	</div>
+
+	<div class="form-item">
+		<label for="tos_checkbox">Required checkbox (example: Terms of Service)</label>
+		<input name="tos_checkbox" id="tos_checkbox" type="checkbox">
+		<span class="validate-msg J_valid_msg"></span>
+
+	</div>
+
+	<button class="button gray" type="submit" name="submit">Submit</button>
+</form>
+<div style="clear: both;height: 0;visibility: hidden;"></div>
+<div class="error_box"></div>
+<div id="success"></div>
+<script src="../../lib/script/tool/jquery.js"></script>
+<script src="validate.min.js"></script>
+<script>
+
+	var validator = new FormValidator('example_form', [
+				{
+					name   : 'req',
+					display: 'required',
+					rules  : 'required|callback_availability'
+//					depends: function (field) {
+//
+//						return Math.random() > .5;
+//					}
+				}, {
+					name : 'alphanumeric',
+					rules: 'alpha_numeric'
+				}, {
+					name : 'password',
+					rules: 'required|callback_check_password'
+				}, {
+					name   : 'password_confirm',
+					display: '密码确认',
+					rules  : 'required|matches[password]'
+				}, {
+					name : 'email',
+					rules: 'valid_email'
+				}, {
+					name   : 'minlength',
+					display: 'min length',
+					rules  : 'min_length[8]'
+				}, {
+					name   : 'tos_checkbox',
+					display: 'terms of service',
+					rules  : 'required'
+				}],
+			function (errors, evt) {
+
+				console.log(errors);
+				if (errors.length > 0) {
+					$('.J_valid_msg')
+							.text('');
+					for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
+						$(errors[i].element)
+								.siblings('.J_valid_msg')
+								.text(errors[i].message);
+					}
+				}
+				if (evt && evt.preventDefault) {
+					evt.preventDefault();
+				} else if (event) {
+					event.returnValue = false;
+				}
+			});
+
+
+	function validatorIterator(config, method, context) {
+		for (var i in config) {
+			if (config.hasOwnProperty(i)) {
+				FormValidator.prototype[method].call(context, i, config[i]);
+			}
+		}
+	}
+
+	validatorIterator(
+			{
+				availability  : '用户名不可用!',
+				check_password: '设置%s时强度太低!',
+				required      : '%s为必填项!',
+				matches       : '%s时两次密码输入不正确'
+			}, 'setMessage', validator);
+
+	validatorIterator(
+			{
+				availability  : function (value) {
+					if (value == 'kel') {
+						console.log('用户名可用!');
+						return true;
+					} else {
+						return false;
+					}
+				},
+				check_password: function (value) {
+					if (value == '123') {
+						$('#success')
+								.html('密码强度高!');
+						return true;
+					} else {
+						return false;
+					}
+				}
+			}, 'registerCallback', validator);
+
+</script>
+</body>
+</html>
+
+<div id="J_P_Pager" class="page clearfix">
+	<div class="p-wrap">
+		<span class="p-num">
+                <a class="J_PagePrev pn-prev" style="display: none;">
+	                <em>上一页</em>
+                </a>
+		<a href="javascript:void(0);" data-page-index="1" class="curr">1</a>
+		<a href="javascript:void(0);" data-page-index="2">2</a>
+		<a class="J_PageNext pn-next">
+			<em>下一页</em>
+		</a>
+		</span>
+		<span class="p-skip">
+			<em>共<b class="p-total">
+				&nbsp;2&nbsp;</b>页&nbsp;到第&nbsp;
+			</em>
+			<input id="J_PageNumInput" class="input-txt" type="text" value="1">
+			<em>
+				&nbsp;页</em>
+			<a class="p-btn  J_PageSkip" href="javascript:void(0);">确定</a>
+		</span>
+	</div>
+</div>

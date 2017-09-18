@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/flatpickr.min.css">
+    <title>日期选择器</title>
+
+
+    <style>
+
+        * {
+            font-family: "Microsoft YaHei";
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+
+        input {
+            max-width: 320px;
+            display: block;
+            outline: none;
+            border: 1px solid #ddd;
+            background: #fbfbfb;
+            border-radius: 3px;
+            color: rgba(0, 0, 0, 0.87);
+            padding: 0 0 0 11px;
+            height: 40px;
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 0.5rem;
+        }
+        input:focus, input.active
+        {
+            outline: 0;
+            background: #fff;
+            border-color: #66afe9;
+
+        }
+
+    </style>
+</head>
+<body>
+<p>
+    <!--<input  placeholder="Try me.." class="flatpickr-input active" readonly="readonly">-->
+
+    <input id="flatpickr-tryme" class="flatpickr flatpickr-input active" data-date-format="d-m-Y" data-min-date="2016-09-20" placeholder="European Format ('d-m-Y')" readonly="readonly">
+
+</p>
+<script src="../jquery.2.2.1.js"></script>
+<script src="js/flatpickr.js"></script>
+<script>
+
+    $('#flatpickr-tryme')
+            .flatpickr();
+
+</script>
+</body>
+</html>

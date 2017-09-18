@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="pager2.css">
+    <title>pagination</title>
+</head>
+<body>
+<div id="J_Page" class="page clearfix"></div>
+<script src="../jquery.2.2.1.js"></script>
+<script src="../underscore.min.js"></script>
+<script src="pagination.js"></script>
+<script>
+    var pager = new util.Pagination({
+        pageIndex: 2,
+        step:2
+    }).render(400);
+
+</script>
+</body>
+</html>

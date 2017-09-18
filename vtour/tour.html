@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>温商贷3周年,天降其财</title>
+
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+	<meta name="format-detection" content="telephone=no, email=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="MobileOptimized" content="640">
+	<meta name="screen-orientation" content="portrait">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="browsermode" content="application">
+	<meta name="x5-page-mode" content="app">
+	<meta name="msapplication-tap-highlight" content="no">
+	<script src="../lib/script/tool/jquery.js"></script>
+
+	<script src="../lib/script/tool/sea.js"></script>
+	<script type="text/javascript">
+		var resource_path = "./";
+
+	</script>
+	<script type="text/javascript">
+		var phoneWidth = parseInt(window.screen.width);
+		var phoneScale = phoneWidth / 640;
+		var isAndroid = false;
+		var ua = navigator.userAgent;
+		if (/Android (\d+\.\d+)/.test(ua)) {
+			var version = parseFloat(RegExp.$1);
+			// andriod 2.3
+			if (version > 2.3) {
+				document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+				// andriod 2.3以上
+			} else {
+				document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+			}
+			isAndroid = true;
+			// 其他系统
+		} else {
+			document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+	</script>
+	<script type="text/javascript">
+		var _smq = _smq || [];
+		_smq.push(['_setAccount', '4d0dade', new Date()]);
+		_smq.push(['pageview']);
+		//        (function () {
+		//            var sm = document.createElement('script');
+		//            sm.type = 'text/javascript';
+		//            sm.async = true;
+		//            sm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdnmaster.com/sitemaster/collect.js';
+		//            var s = document.getElementsByTagName('script')[0];
+		//            s.parentNode.insertBefore(sm, s);
+		//        })();
+	</script>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		@-ms-viewport {
+			width : device-width;
+		}
+
+		@media only screen and (min-device-width : 800px) {
+			html {
+				overflow : hidden;
+			}
+		}
+
+		html {
+			height : 100%;
+		}
+
+		body {
+			height           : 100%;
+			overflow         : hidden;
+			margin           : 0;
+			padding          : 0;
+			font-family      : Arial, Helvetica, sans-serif;
+			font-size        : 16px;
+			color            : #ffffff;
+			background-color : #000000;
+		}
+	</style>
+</head>
+<body>
+
+<script src="tour.js"></script>
+
+<div id="pano" style="width:100%;height:100%;">
+	<noscript>
+		<table style="width:100%;height:100%;">
+			<tr style="vertical-align:middle;">
+				<td>
+					<div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div>
+				</td>
+			</tr>
+		</table>
+	</noscript>
+
+	<script>
+		embedpano({
+			swf     : "tour.swf",
+			xml     : "tour.xml",
+			target  : "pano",
+			html5   : (document.domain ? "prefer" : "auto"),
+			initvars: {design: "flat"},
+
+			passQueryParameters: true
+		});
+	</script>
+</div>
+
+
+<!--游戏时间设定-->
+<div class="count">
+	<p>00:<span id="time">30</span></p>
+</div>
+<div class="sm_bg" id="zone">0</div>
+<!-- game_over -->
+<div class="over">
+	<div class="pic"></div>
+</div>
+<div class="num_box">
+	<div class="last">
+		<div class="num" id="num">0</div>
+		<a href="javascript:void(0);" class="btn_lot"></a>
+		<a href="javascript:void(0);" class="btn_friend"></a>
+	</div>
+</div>
+<!--领取奖励弹窗-->
+<div class="reward_box">
+	<div class="last">
+		<a href="javascript:void(0);" class="btn_take_now"></a>
+		<!--分享按钮'造福朋友'-->
+		<a href="javascript:void(0);" class="btn_friend"></a>
+		<!--再玩一次-->
+		<a href="javascript:void(0);" class="btn_again"></a>
+	</div>
+</div>
+
+<!--分享弹窗-->
+<div class="share_friend">
+	<div class="last">
+		<!--'我知道了'按钮-->
+		<a href="javascript:void(0);" class="btn_share"></a>
+	</div>
+</div>
+//老用户弹窗
+<div class="old">
+	<div class="last">
+		<input type="text" id="account_old" placeholder="请输入账号"/>
+		<input type="text" id="password" placeholder="请输入密码"/>
+		<a href="javascript:void(0);" class="btn_login"></a>
+		<!--此处为下载链接-->
+		<a href="javascript:void(0);" class="btn_download_ios"></a>
+		<a href="javascript:void(0);" class="btn_download_android"></a>
+
+	</div>
+</div>
+//新用户弹窗
+<div class="new">
+	<div class="last">
+		<input type="text" id="account_new" placeholder="请输入账号"/>
+		<input type="text" id="validate_code" placeholder="验证码"/>
+		<div href="javascript:void(0);" class="btn_validate">获取验证码</div>
+		<a href="javascript:void(0);" class="btn_login"></a>
+		<!--此处为下载链接-->
+		<a href="javascript:void(0);" class="btn_download_ios"></a>
+		<a href="javascript:void(0);" class="btn_download_android"></a>
+
+	</div>
+</div>
+
+//领取奖励之后弹窗提示
+<div class="win_tip">
+	<div class="last">
+
+		<a href="javascript:void(0);" class="btn_share"></a>
+		<!--此处为下载链接-->
+		<a href="javascript:void(0);" class="btn_download_ios"></a>
+		<a href="javascript:void(0);" class="btn_download_android"></a>
+
+	</div>
+</div>
+
+<script>
+
+	seajs.use("./js/game");
+	//点击的钱币的数组
+	var collect = new Array();
+	var s2, timers1;
+	// timers1 = setInterval("time()", 1000);
+	function time() {
+		s2 = document.getElementById("time");
+		s2.innerHTML = s2.innerHTML * 1 - 1;
+		if (s2.innerHTML < 10) {
+			s2.innerHTML = "0" + s2.innerHTML;
+		}
+		if (s2.innerHTML == 0) {
+			clearInterval(timers1);
+			s2.innerHTML = "00";
+			setTimeout(function () {
+				$(".over").show();
+				setTimeout(function () {
+					$(".over").hide();
+					_smq.push(['custom', '16CNY_Hold', '16CNY_Hold_lottery']);
+					$(".num_box").show();
+					//获取玩家点击的个数
+					var shu = $(".sm_bg").text();
+					var num = document.getElementById("num");
+					num.innerHTML = shu;
+				}, 500);
+			}, 200);
+		}
+	}
+	var zone = document.getElementById("zone");
+	var arrayObj = new Array();
+	var arrayvalue;
+	function getArea(name) {
+		if (arrayObj.length > 0) {
+			for (var i = 0; i < arrayObj.length; i++) {
+				arrayvalue = arrayObj[i];
+				if (name == arrayvalue) {
+					return;
+				}
+			}
+		}
+		arrayObj[arrayObj.length] = name;
+		zone.innerHTML = parseInt(zone.innerHTML) + 1;
+		console.log(arrayObj);
+		collect = arrayObj;
+	}
+</script>
+<script>
+	$(document).ready(function () {
+		var btn_lot_step = 0;
+		//是否为老用户,需要接口判断
+		var isOld = true;
+
+		//'试试手气'按钮点击
+		$('.btn_lot').click(function () {
+
+			//******
+			//此处需要首先判断新老用户
+			//******
+
+
+
+
+			//试试手气弹窗隐藏
+			$('.num_box').hide();
+
+			//领取奖励弹窗显示
+			$('.reward_box').show();
+
+
+//			if (btn_lot_step === 0) {
+//				var num = document.getElementById("num").innerHTML;
+//				$.ajax({
+//					type:       "POST",
+//					url:        '',
+//					dataType:   "json",
+//					data:       {
+//						num:     num
+////					collect: collect
+//					},
+//					beforeSend: function () {
+//						btn_lot_step = 1;
+//					},
+//					success:    function (data) {
+//						_smq.push(['custom', '16CNY_Hold', '16CNY_Hold_lottery_draw']);
+//						if (data.msg == 0) {
+//							alert(data.alert);
+//							window.location.href = '/index.php/Home/Index/game';
+//						} else {
+//							window.location.href = '/index.php/Home/Index/goToLz';
+//						}
+//					},
+//					complete:   function () {
+//						btn_lot_step = 0;
+//					}
+//				});
+//			}
+		});
+
+
+		$('.btn_take_now').click(function () {
+			//判断是新用户还是老用户
+			isOld ? $('.old').show() : $('.new').show();
+		});
+
+		//分享
+		$('.btn_friend').click(function () {
+//			$('.num_box').hide();
+//			$('.reward_box').hide();
+			$('.share_friend').show();
+		});
+
+		//分享提示弹窗'我知道了'按钮点击
+		$('.btn_share').click(function () {
+			$('.share_friend').hide();
+			$('.win_tip').hide();
+
+		});
+
+		//新老用户提示弹窗立即登录和立即领取按钮点击
+		$('.btn_login').click(function () {
+			$('.win_tip').show();
+		});
+	});
+</script>
+</body>
+</html>

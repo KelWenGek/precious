@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./owl.carousel.css">
+    <link rel="stylesheet" href="../animate/animate.min.css">
+    <title>Title</title>
+    <style>
+        #J_wsd_slider {
+            width: 1210px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="owl-carousel" id="J_wsd_slider">
+    <img class="owl-lazy" data-src="./img/slider1.jpg" alt="">
+    <img class="owl-lazy" data-src="./img/slider2.jpg" alt="">
+
+</div>
+<script src="../jquery.2.2.1.js"></script>
+<script src="owl.carousel.min.js"></script>
+<script>
+
+
+    $('#J_wsd_slider')
+            .owlCarousel({
+                items: 1,
+                loop: true,
+                nav: true,
+                navText: ['<', '>'],
+                slideBy: 1,
+                dots: true,
+                dotsEach: 1,
+                lazyLoad: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                animateOut: '',
+                animateIn: '',
+
+            });
+
+
+    var defaults = {
+        items: 1,	// Number	3 在屏幕中可见的旋转木马项
+        margin: 0,	//Number	0	旋转木马项的margin-right值，单位像素
+        loop: true,	//Boolean	false	是否无限循环，会复制第一项和最后一项来制作无限循环的错觉
+        center: false,	//Boolean	false	旋转木马项居中。在奇数和偶数项中都可以很好的工作
+        mouseDrag: true,	//Boolean	true	是否可以使用鼠标拖拽
+        touchDrag: true,	//Boolean	true	是否可以触摸拖拽
+        pullDrag: true,	//Boolean	true	Stage pull to edge.
+        freeDrag: false,	//Boolean	false	Item pull to edge
+        stagePadding: 0,	//Number	0	Stage上的Padding left和Padding right(可以看到相邻的项)
+        merge: false,	//Boolean	false	合并旋转木马项。Looking for data-merge='{number}' inside item.
+        mergeFit: true,	//Boolean	true	如果屏幕比旋转木马项小，使旋转木马项适合屏幕大小
+        autoWidth: false,	//Boolean	false	设置非网格内容。尝试在div上使用width样式
+        startPosition: 0,	//Number/String	0	开始点或URL Hash字符串，如：'#id'
+        URLhashListener: false,	//Boolean	false	监听url hash 的变化。必须在旋转木马项上设置data-hash属性
+        nav: true,	//Boolean	false	显示ext/prev按钮
+        navRewind: true,	//Boolean	true	跳转到前一项或后一项
+        navText: ['<', '>'],	//Array	['next','prev']	HTML箭头导航
+        slideBy: 1,	//Number/String	1 Navigation slide by x. 'page' string can be set to slide by page.
+        dots: true,	//Boolean	true	显示圆点导航按钮
+        dotsEach: false,	//Number/Boolean	false	Default: false	每多少个项显示一个圆点导航按钮
+        dotData: false,	//Boolean	false	使用data-dot的内容
+        lazyLoad: true,	//Boolean	false	是否懒加载图片。data-src和data-src-retina为高分辨率。如果元素不是<img>会设置为元素的内联背景图像。
+        lazyContent: false,	//Boolean	false	lazyContent选项只在测试版中有，发行版中已经被删除。
+        autoplay: true,	//Boolean	false	旋转木马是否自动播放
+        autoplayTimeout: 3000,	//Number	5000	旋转木马自动播放的时间间隔
+        autoplayHoverPause: true,	//Boolean	false	是否在鼠标滑过时停止自动播放
+        smartSpeed: 250,	//Number	250	速度计算
+        //fluidSpeed:	Boolean	Number	速度计算
+        //autoplaySpeed:false,	//Number/Boolean	false	是新密码自动播放的速度
+        navSpeed: false,	//Number/Boolean	false	旋转木马导航的速度
+        //dotsSpeed	Boolean	Number/Boolean	分页的速度
+        dragEndSpeed: false,	//Number/Boolean	false	Drag end speed
+        callbacks: true,	//Boolean	true	是否允许回调函数
+        //responsive	Object	empty object	包含responsive选项的对象。设置为flase取消responsive能力。
+        responsiveRefreshRate: 200,	//Number	200 Responsive的刷新频率
+        //responsiveBaseElement	DOM element	window	可以设置在任何DOM元素上。如果你关心不支持响应式的浏览器（如IE8），可以在包裹容器中使用该属性。
+        //responsiveClass	Boolean	false	可选的辅助class。添加owl-reponsive-和breakpoint class到主元素上。可以在给定breakpoint的元素上设置内容样式。
+        //video	Boolean	false	是否允许添加YouTube/Vimeo视频。
+        //videoHeight	Number/Boolean	false	设置视频的高度。
+        //videoWidth	Number/Boolean	false	设置视频的宽度。
+        animateOut: '',	//String/Bolean	false	CSS3 animation out.
+        animateIn: '',	//String/Bolean	false	CSS3 animation in.
+        //fallbackEasing	String	swing	Easing for CSS2 $.animate.
+        //info	Function	false	获取基本信息的回调函数(当前的 item/pages/widths) 。Info函数的第二个参数是Owl DOM元素的对象引用。
+
+    };
+</script>
+
+</body>
+</html>

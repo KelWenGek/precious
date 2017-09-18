@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="css/screen.css">-->
+    <style>
+        /*#commentForm {*/
+        /*width: 500px;*/
+        /*}*/
+
+        /*#commentForm label {*/
+        /*width: 250px;*/
+        /*}*/
+
+        /*#commentForm label.error,*/
+        /*#commentForm input.submit {*/
+        /*margin-left: 253px;*/
+        /*}*/
+
+        /*#signupForm {*/
+        /*width: 670px;*/
+        /*}*/
+
+        /*#signupForm label.error {*/
+        /*margin-left: 10px;*/
+        /*width: auto;*/
+        /*display: block;*/
+        /*}*/
+
+        /*#newsletter_topics label.error {*/
+        /*display: none;*/
+        /*margin-left: 103px;*/
+        /*}*/
+
+
+
+        .button-state-success{
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div class="button-state-success">111</div>
+<form class="cmxform" id="signupForm" method="get" action="">
+    <fieldset>
+        <legend>Validating a complete form</legend>
+        <p>
+            <label for="firstname">Firstname</label>
+            <input id="firstname" name="firstname" type="text">
+
+        </p>
+        <!--<p>-->
+            <!--<label for="lastname">Lastname</label>-->
+            <!--<input id="lastname" name="lastname" type="text">-->
+
+        <!--</p>-->
+        <!--<p>-->
+            <!--<label for="username">Username</label>-->
+            <!--<input id="username" name="username" type="text">-->
+
+        <!--</p>-->
+        <!--<p>-->
+            <!--<label for="password">Password</label>-->
+            <!--<input id="password" name="password" type="password">-->
+
+        <!--</p>-->
+        <!--<p>-->
+            <!--<label for="confirm_password">Confirm password</label>-->
+            <!--<input id="confirm_password" name="confirm_password" type="password">-->
+
+        <!--</p>-->
+        <!--<p>-->
+            <!--<label for="email">Email</label>-->
+            <!--<input id="email" name="email" type="email">-->
+        <!--</p>-->
+        <!--<p>-->
+            <!--<label for="agree">Please agree to our policy</label>-->
+            <!--<input type="checkbox" class="checkbox valid" id="agree" name="agree">-->
+
+        <!--</p>-->
+        <!--<p>-->
+            <!--<label for="newsletter">I'd like to receive the newsletter</label>-->
+            <!--<input type="checkbox" class="checkbox" id="newsletter" name="newsletter">-->
+        <!--</p>-->
+        <!--<fieldset id="newsletter_topics" class="gray">-->
+            <!--<legend>Topics (select at least two) - note: would be hidden when newsletter isn't selected, but is visible-->
+                <!--here for the demo-->
+            <!--</legend>-->
+            <!--<label for="topic_marketflash">-->
+                <!--<input type="checkbox" id="topic_marketflash" value="marketflash" name="topic">Marketflash-->
+            <!--</label>-->
+            <!--<label for="topic_fuzz">-->
+                <!--<input type="checkbox" id="topic_fuzz" value="fuzz" name="topic">Latest fuzz-->
+            <!--</label>-->
+            <!--<label for="topic_digester">-->
+                <!--<input type="checkbox" id="topic_digester" value="digester" name="topic"-->
+                       <!--disabled="disabled">Mailing list digester-->
+            <!--</label>-->
+
+        <!--</fieldset>-->
+        <p>
+            <input class="submit" type="submit" value="Submit">
+        </p>
+    </fieldset>
+</form>
+
+<script src="../jquery.2.2.1.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script>
+
+    var v = $("#signupForm")
+            .validate({
+                rules: {
+                    firstname: "required",
+
+                    username: {
+                        required: true,
+                        minlength: 2
+                    }
+                },
+                messages: {
+                    firstname: "Please enter your firstname",
+
+                    username: {
+                        required: "Please enter a username",
+                        minlength: "Your username must consist of at least 2 characters"
+                    }
+                },
+                submitHandler: function (form, event) {
+                    console.log(form);
+                    console.log(event);
+                    console.log(v);
+                }
+            });
+
+
+</script>
+</body>
+</html>
